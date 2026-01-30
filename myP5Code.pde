@@ -3,18 +3,43 @@ void setup(){
   size(600, 400); 
   background(255,255,255);
 
-  var textX = random(50, 550);
-  var textY = random(50, 350);
-  var yourName = "Your Name";
+  drawName();
+  drawName();
+  drawName();
 
-  fill(241,9,55);
-  textSize(40);
-  text("Hiiii, " + yourName, textX, textY);
+  frameRate(100);
+  
 }
 
 //🟢Draw Function - Runs on Repeat
+
+
+var drawName = function() {
+  var textX = random(-100, 600);
+  var textY = random(0, 420);
+  var yourName = "Estlin";
+
+  fill(random(0,255),random(0,255),random(0,255));
+  textSize(200);
+  text("Hi " + yourName + "!!!", textX, textY);
+};
+
+var drawEmoji = function(){
+  var faceSize = random(20,202);
+  var faceX = mouseX + random(-152,52);
+  var faceY = mouseY + random(-152,152);
+  textSize(faceSize);
+  text(">⩊<",faceX, faceY);
+};
+
 draw = function(){  
 
+  drawName();
+  
+  if(mousePressed){
+    background(255);
+    drawEmoji();
+  };
 };
 
 //🟡Extra FUN Features Ms. Hall Added
@@ -37,4 +62,6 @@ mouseClicked = function(){
   drawStar();
   drawStar();
   drawStar();
+  drawEmoji();
+  drawEmoji();
 };
